@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="static/css/index.css">
     <title>登录界面</title>
 
 </head>
@@ -11,8 +11,8 @@
 <p class="hello">欢迎进入学生管理系统</p>
 <div class="login-container" >
     <div class="login-card">
-         <p class="login-subtitle">请输入账号密码登录</p>
          <form id="loginForm" class="login-form">
+            <img src="static/img/index.jpg" class="index-hello">
             <div class="login-group-account">
                 <input type="text" placeholder="请输入账号" id="account" class="account">
             </div>
@@ -20,11 +20,12 @@
                 <input type="password" placeholder="请输入密码" id="password" class="password">
             </div>
             <button type="submit" class="login-btn" id="login-btn">登录</button>
-
+            <button type="button" class="register-Btn" id="register-Btn">注册</button>
          </form>
 
+         
 </div>
 </div>
-<script src="json/login.js"></script>
+<script src="static/json/login.js"></script>
 </body>
 </html>

@@ -8,6 +8,9 @@ window.addEventListener('DOMContentLoaded', () => {
   renderStudentList(); // 渲染学生列表
   bindEvents(); // 绑定所有事件
 });
+//以上为主函数
+
+
 
 // 渲染学生列表（支持分页）
 function renderStudentList() {
@@ -29,6 +32,7 @@ function renderStudentList() {
       <td>${student.age}</td>
       <td>${student.className}</td>
       <td>${student.major}</td>
+      <td>${student.GPA}</td>
       <td>${student.phone}</td>
       <td>
         <button class="editBtn" data-id="${student.id}">编辑</button>
@@ -52,8 +56,26 @@ function bindEvents() {
     document.getElementById('editId').value = ''; // 清空编辑id
     document.getElementById('formModal').style.display = 'block'; // 显示弹窗
   });
-
-  // 表单提交：新增或编辑学生
+    //表单取消隐藏
+  document.getElementById('closeModal').addEventListener('click', () => {
+    const modal = document.getElementById('formModal');
+    modal.style.display = 'none'; // 隐藏弹窗
+    document.getElementById('studentForm').reset(); // 重置表单
+    // 可选：如果需要重置表单类型为新增（避免下次打开还是编辑状态）
+    document.getElementById('formType').value = 'add';
+    document.getElementById('editId').value = '';
+  });
+  //跳转绑定
+  document.getElementById('class').addEventListener('click',()=>{
+    window.location.href='class.html';
+  })
+   document.getElementById('course').addEventListener('click',()=>{
+    window.location.href='course.html';
+  })
+  document.getElementById('notice').addEventListener('click',()=>{
+    window.location.href='notice.html';
+  })
+  // 表单提交：新增或编辑学生W
   document.getElementById('studentForm').addEventListener('submit', (e) => {
     e.preventDefault();
     const formType = document.getElementById('formType').value;
@@ -64,6 +86,7 @@ function bindEvents() {
       age: parseInt(document.getElementById('age').value),
       className: document.getElementById('className').value.trim(),
       major: document.getElementById('major').value.trim(),
+      GPA:document.getElementById('GPA').value.trim(),
       phone: document.getElementById('phone').value.trim()
     };
 
@@ -106,6 +129,7 @@ document.getElementById('studentList').addEventListener('click', (e) => {
       document.getElementById('className').value = student.className;
       document.getElementById('major').value = student.major;
       document.getElementById('phone').value = student.phone;
+      document.getElementById('GPA').value = student.GPA;
       document.getElementById('formModal').style.display = 'block'; // 显示弹窗
     }
   }
@@ -162,3 +186,5 @@ document.getElementById('nextPage').addEventListener('click', () => {
     renderStudentList();
   }
 });
+
+//取消按钮逻辑编写

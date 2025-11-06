@@ -1,0 +1,30 @@
+p.hello{
+  background-color: #eee;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 50px;
+  font-weight: bolder;
+  text-align: center;
+}
+.login-container .login-card .login-group-account .account{
+    text-align: center;
+}
+.login-container .login-card .login-group-password .password{
+    text-align: center;
+}
+.login-container .login-card .login-form{
+
+    text-align: center;
+    background-color: blanchedalmond;
+    padding: 20px;
+    font-style: "微软雅黑";
+}
+#login-btn{
+  background-color: lightblue;
+
+}
+#register-Btn{
+  background-color: lightblue;
+
+}
